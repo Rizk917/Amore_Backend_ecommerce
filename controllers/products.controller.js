@@ -32,6 +32,8 @@ const createProduct = async (req, res) => {
     productDescription,
     productPrice,
     productQuantity,
+    Sale,
+    FinalPrice,
     categoryId,
   } = req.body;
   try {
@@ -44,6 +46,8 @@ const createProduct = async (req, res) => {
       productPrice,
       productQuantity,
       categoryId,
+      Sale,
+      FinalPrice:productPrice-productPrice*Sale/100,
     });
     const savedProduct = await product.save();
     res.status(201).json({
@@ -79,6 +83,8 @@ const updateProduct = async (req, res) => {
         productPrice,
         productQuantity,
         categoryId,
+        Sale,
+        FinalPrice:productPrice-productPrice*Sale/100,
         });
 
 

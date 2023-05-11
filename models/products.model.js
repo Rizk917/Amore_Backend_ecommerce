@@ -5,21 +5,26 @@ const productSchema = mongoose.Schema({
     type: String,
     // required:true,
   },
-
   productImage: {
     type: String,
     // required:true,
   },
-
   productDescription: {
     type: String,
   },
-
   productPrice: {
     type: Number,
     // required:true
   },
+  Sale: {
+    type: Number,
+    // required:true
+  },
   productQuantity: {
+    type: Number,
+    // required:true
+  },
+  FinalPrice: {
     type: Number,
     // required:true
   },
@@ -28,6 +33,8 @@ const productSchema = mongoose.Schema({
     ref: "Category",
     // required:true
   },
+
+
 });
 
 const Product = mongoose.model("Product", productSchema);
